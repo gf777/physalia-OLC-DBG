@@ -22,11 +22,11 @@ void DFS(string* path, int v1, vector<string> reads, vector<vector<int>> overlap
         
         cout<<"current path is: "<<*path<<endl;
         
-        int v2 = overlaps.at(v1).at(0);
-        
-        (*visited)[v1] = true;
-        
         if(overlaps.at(v1).size() > 0) {
+            
+            int v2 = overlaps.at(v1).at(0);
+            
+            (*visited)[v1] = true;
         
             DFS(path, v2, reads, overlaps, visited);
             
