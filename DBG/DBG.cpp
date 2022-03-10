@@ -17,8 +17,8 @@ using namespace std;
 int main()
 {
     //declare the problem
-    string genome = "ATGCTGATCA", Lkmer, Rkmer;
-    int read_len = 7, k = 3, nodeUid = 0, n1 = 0, n2 = 0;
+    string genome = "ATGCTGATCACAATATAGAT", Lkmer, Rkmer;
+    int read_len = 7, k = 4, nodeUid = 0, n1 = 0, n2 = 0;
     vector<string> reads;
     unordered_map<string, int> nodesFW;
     unordered_map<int, string> nodesBW;
@@ -126,9 +126,9 @@ int main()
         }
     }
     
-    cout<<"The original genome is: "<<genome<<endl;
+    cout<<"The original genome is:\t\t\t"<<genome<<endl;
     //final path
-    cout<<"The reconstructed genome is: "<<path<<endl;
+    cout<<"The reconstructed genome is:\t"<<path<<endl;
 
     return 0;
 }

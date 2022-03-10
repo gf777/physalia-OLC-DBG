@@ -94,7 +94,8 @@ int main()
     DFS(&path, start_node, reads, overlaps, &visited);
     
     //output consensus
-    cout<<"final path is: "<<path<<endl;
+    cout<<"The original genome is:\t\t\t"<<genome<<endl;
+    cout<<"The reconstructed genome is:\t"<<path<<endl;
 
     return 0;
 }
