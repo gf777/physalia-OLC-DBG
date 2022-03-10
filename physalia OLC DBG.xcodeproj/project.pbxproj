@@ -7,28 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D46A88627D9060200F99C07 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D46A88527D9060200F99C07 /* main.cpp */; };
+		0D46A99627D96F7300F99C07 /* DBG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D46A88C27D92B0100F99C07 /* DBG.cpp */; };
+		0D46A9D227D9708100F99C07 /* OLC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D46A88527D9060200F99C07 /* OLC.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0D46A88027D9060200F99C07 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0D46A88227D9060200F99C07 /* physalia OLC DBG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "physalia OLC DBG"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D46A88527D9060200F99C07 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0D46A88527D9060200F99C07 /* OLC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OLC.cpp; sourceTree = "<group>"; };
+		0D46A88C27D92B0100F99C07 /* DBG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DBG.cpp; sourceTree = "<group>"; };
+		0D46A96827D96F3100F99C07 /* DBG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D46A9A527D9706A00F99C07 /* OLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D46A87F27D9060200F99C07 /* Frameworks */ = {
+		0D46A96527D96F3100F99C07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D46A9A227D9706A00F99C07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +39,8 @@
 		0D46A87927D9060200F99C07 = {
 			isa = PBXGroup;
 			children = (
-				0D46A88427D9060200F99C07 /* physalia OLC DBG */,
+				0D46A89A27D96AA300F99C07 /* DBG */,
+				0D46A88427D9060200F99C07 /* OLC */,
 				0D46A88327D9060200F99C07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,38 +48,64 @@
 		0D46A88327D9060200F99C07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0D46A88227D9060200F99C07 /* physalia OLC DBG */,
+				0D46A96827D96F3100F99C07 /* DBG.app */,
+				0D46A9A527D9706A00F99C07 /* OLC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0D46A88427D9060200F99C07 /* physalia OLC DBG */ = {
+		0D46A88427D9060200F99C07 /* OLC */ = {
 			isa = PBXGroup;
 			children = (
-				0D46A88527D9060200F99C07 /* main.cpp */,
+				0D46A88527D9060200F99C07 /* OLC.cpp */,
 			);
-			path = "physalia OLC DBG";
+			path = OLC;
+			sourceTree = "<group>";
+		};
+		0D46A89A27D96AA300F99C07 /* DBG */ = {
+			isa = PBXGroup;
+			children = (
+				0D46A88C27D92B0100F99C07 /* DBG.cpp */,
+			);
+			path = DBG;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0D46A88127D9060200F99C07 /* physalia OLC DBG */ = {
+		0D46A96727D96F3100F99C07 /* DBG (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D46A88927D9060200F99C07 /* Build configuration list for PBXNativeTarget "physalia OLC DBG" */;
+			buildConfigurationList = 0D46A98C27D96F3100F99C07 /* Build configuration list for PBXNativeTarget "DBG (macOS)" */;
 			buildPhases = (
-				0D46A87E27D9060200F99C07 /* Sources */,
-				0D46A87F27D9060200F99C07 /* Frameworks */,
-				0D46A88027D9060200F99C07 /* CopyFiles */,
+				0D46A96427D96F3100F99C07 /* Sources */,
+				0D46A96527D96F3100F99C07 /* Frameworks */,
+				0D46A96627D96F3100F99C07 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "physalia OLC DBG";
-			productName = "physalia OLC DBG";
-			productReference = 0D46A88227D9060200F99C07 /* physalia OLC DBG */;
-			productType = "com.apple.product-type.tool";
+			name = "DBG (macOS)";
+			productName = "DBG (macOS)";
+			productReference = 0D46A96827D96F3100F99C07 /* DBG.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D46A9A427D9706A00F99C07 /* OLC (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D46A9C927D9706A00F99C07 /* Build configuration list for PBXNativeTarget "OLC (macOS)" */;
+			buildPhases = (
+				0D46A9A127D9706A00F99C07 /* Sources */,
+				0D46A9A227D9706A00F99C07 /* Frameworks */,
+				0D46A9A327D9706A00F99C07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OLC (macOS)";
+			productName = "OLC (macOS)";
+			productReference = 0D46A9A527D9706A00F99C07 /* OLC.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -89,9 +114,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					0D46A88127D9060200F99C07 = {
+					0D46A96727D96F3100F99C07 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					0D46A9A427D9706A00F99C07 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -109,17 +138,43 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0D46A88127D9060200F99C07 /* physalia OLC DBG */,
+				0D46A96727D96F3100F99C07 /* DBG (macOS) */,
+				0D46A9A427D9706A00F99C07 /* OLC (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0D46A96627D96F3100F99C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D46A9A327D9706A00F99C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		0D46A87E27D9060200F99C07 /* Sources */ = {
+		0D46A96427D96F3100F99C07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D46A88627D9060200F99C07 /* main.cpp in Sources */,
+				0D46A99627D96F7300F99C07 /* DBG.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D46A9A127D9706A00F99C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D46A9D227D9708100F99C07 /* OLC.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,19 +292,115 @@
 			};
 			name = Release;
 		};
-		0D46A88A27D9060200F99C07 /* Debug */ = {
+		0D46A98D27D96F3100F99C07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.DBG;
+				PRODUCT_NAME = DBG;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		0D46A88B27D9060200F99C07 /* Release */ = {
+		0D46A98E27D96F3100F99C07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.DBG;
+				PRODUCT_NAME = DBG;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		0D46A9CA27D9706A00F99C07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.OLC;
+				PRODUCT_NAME = OLC;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0D46A9CB27D9706A00F99C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.OLC;
+				PRODUCT_NAME = OLC;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -265,11 +416,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D46A88927D9060200F99C07 /* Build configuration list for PBXNativeTarget "physalia OLC DBG" */ = {
+		0D46A98C27D96F3100F99C07 /* Build configuration list for PBXNativeTarget "DBG (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0D46A88A27D9060200F99C07 /* Debug */,
-				0D46A88B27D9060200F99C07 /* Release */,
+				0D46A98D27D96F3100F99C07 /* Debug */,
+				0D46A98E27D96F3100F99C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D46A9C927D9706A00F99C07 /* Build configuration list for PBXNativeTarget "OLC (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D46A9CA27D9706A00F99C07 /* Debug */,
+				0D46A9CB27D9706A00F99C07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

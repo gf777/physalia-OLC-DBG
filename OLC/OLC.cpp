@@ -46,7 +46,7 @@ int main()
     
     //check variables
     cout<<"The original genome is: "<<genome<<endl;
-    cout<<genome.size()<<endl;
+    cout<<"Genome size: "<<genome.size()<<endl;
 
     //generate reads
     for (int i = 0; i <= genome.size()-read_len; i++)
