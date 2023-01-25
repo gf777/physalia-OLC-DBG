@@ -14,19 +14,19 @@ Giulio Formenti (giulio.formenti@gmail.com)
 using namespace std;
 
 //DFS to walk the graph
-void DFS(string* path, int v1, vector<string> reads, vector<vector<int>> overlaps, unordered_map<int, bool>* visited) {
+void DFS(string& path, int v1, vector<string> reads, vector<vector<int>> overlaps, unordered_map<int, bool>& visited) {
     
-    if (!(*visited)[v1]) {
+    if (!visited[v1]) {
     
-        path->insert(path->size(),reads[v1].substr(4,1));
+        path.insert(path.size(), reads[v1].substr(4,1));
         
-        cout<<"current path is: "<<*path<<endl;
+        cout<<"current path is: "<<path<<endl;
         
         if(overlaps.at(v1).size() > 0) {
             
             int v2 = overlaps.at(v1).at(0);
             
-            (*visited)[v1] = true;
+            visited[v1] = true;
         
             DFS(path, v2, reads, overlaps, visited);
             
@@ -47,12 +47,14 @@ int main()
     //check variables
     cout<<"The original genome is: "<<genome<<endl;
     cout<<"Genome size: "<<genome.size()<<endl;
+    cout<<"Read length is: "<<read_len<<endl;
+    cout<<"Expected read overlap is: "<<overlap_len<<endl;
 
     //generate reads
     for (int i = 0; i <= genome.size()-read_len; i++)
         reads.push_back(genome.substr(i,read_len));
     
-    //check reads
+    //print reads
     for(const auto& read : reads)
       std::cout << read << std::endl;
     
@@ -91,7 +93,7 @@ int main()
     unordered_map<int, bool> visited;
     
     //walk the graph (DFS)
-    DFS(&path, start_node, reads, overlaps, &visited);
+    DFS(path, start_node, reads, overlaps, visited);
     
     //output consensus
     cout<<"The original genome is:\t\t\t"<<genome<<endl;
