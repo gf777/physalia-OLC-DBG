@@ -11,7 +11,26 @@
 		0D46A9D227D9708100F99C07 /* OLC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D46A88527D9060200F99C07 /* OLC.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0D3DED9C29819EC400E57AE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D46A87A27D9060200F99C07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D46A96727D96F3100F99C07;
+			remoteInfo = "DBG (macOS)";
+		};
+		0D3DEDA929819ECF00E57AE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D46A87A27D9060200F99C07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D46A9A427D9706A00F99C07;
+			remoteInfo = "OLC (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0D3DED9829819EC400E57AE7 /* DBGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D3DEDA529819ECF00E57AE7 /* OLCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OLCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D46A88527D9060200F99C07 /* OLC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OLC.cpp; sourceTree = "<group>"; };
 		0D46A88C27D92B0100F99C07 /* DBG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DBG.cpp; sourceTree = "<group>"; };
 		0D46A96827D96F3100F99C07 /* DBG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +38,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D3DED9529819EC400E57AE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D3DEDA229819ECF00E57AE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D46A96527D96F3100F99C07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,6 +83,8 @@
 			children = (
 				0D46A96827D96F3100F99C07 /* DBG.app */,
 				0D46A9A527D9706A00F99C07 /* OLC.app */,
+				0D3DED9829819EC400E57AE7 /* DBGTests.xctest */,
+				0D3DEDA529819ECF00E57AE7 /* OLCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +108,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D3DED9729819EC400E57AE7 /* DBGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D3DED9E29819EC400E57AE7 /* Build configuration list for PBXNativeTarget "DBGTests" */;
+			buildPhases = (
+				0D3DED9429819EC400E57AE7 /* Sources */,
+				0D3DED9529819EC400E57AE7 /* Frameworks */,
+				0D3DED9629819EC400E57AE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D3DED9D29819EC400E57AE7 /* PBXTargetDependency */,
+			);
+			name = DBGTests;
+			productName = DBGTests;
+			productReference = 0D3DED9829819EC400E57AE7 /* DBGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0D3DEDA429819ECF00E57AE7 /* OLCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D3DEDAB29819ECF00E57AE7 /* Build configuration list for PBXNativeTarget "OLCTests" */;
+			buildPhases = (
+				0D3DEDA129819ECF00E57AE7 /* Sources */,
+				0D3DEDA229819ECF00E57AE7 /* Frameworks */,
+				0D3DEDA329819ECF00E57AE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D3DEDAA29819ECF00E57AE7 /* PBXTargetDependency */,
+			);
+			name = OLCTests;
+			productName = OLCTests;
+			productReference = 0D3DEDA529819ECF00E57AE7 /* OLCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0D46A96727D96F3100F99C07 /* DBG (macOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D46A98C27D96F3100F99C07 /* Build configuration list for PBXNativeTarget "DBG (macOS)" */;
@@ -114,9 +185,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					0D3DED9729819EC400E57AE7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0D46A96727D96F3100F99C07;
+					};
+					0D3DEDA429819ECF00E57AE7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0D46A9A427D9706A00F99C07;
+					};
 					0D46A96727D96F3100F99C07 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -140,11 +219,27 @@
 			targets = (
 				0D46A96727D96F3100F99C07 /* DBG (macOS) */,
 				0D46A9A427D9706A00F99C07 /* OLC (macOS) */,
+				0D3DED9729819EC400E57AE7 /* DBGTests */,
+				0D3DEDA429819ECF00E57AE7 /* OLCTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D3DED9629819EC400E57AE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D3DEDA329819ECF00E57AE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D46A96627D96F3100F99C07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +257,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D3DED9429819EC400E57AE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D3DEDA129819ECF00E57AE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D46A96427D96F3100F99C07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,7 +289,116 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0D3DED9D29819EC400E57AE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D46A96727D96F3100F99C07 /* DBG (macOS) */;
+			targetProxy = 0D3DED9C29819EC400E57AE7 /* PBXContainerItemProxy */;
+		};
+		0D3DEDAA29819ECF00E57AE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D46A9A427D9706A00F99C07 /* OLC (macOS) */;
+			targetProxy = 0D3DEDA929819ECF00E57AE7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0D3DED9F29819EC400E57AE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.DBGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DBG.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DBG";
+			};
+			name = Debug;
+		};
+		0D3DEDA029819EC400E57AE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.DBGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DBG.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DBG";
+			};
+			name = Release;
+		};
+		0D3DEDAC29819ECF00E57AE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.OLCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OLC";
+			};
+			name = Debug;
+		};
+		0D3DEDAD29819ECF00E57AE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GF.OLCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OLC";
+			};
+			name = Release;
+		};
 		0D46A88727D9060200F99C07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -359,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -389,7 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -417,6 +635,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D3DED9E29819EC400E57AE7 /* Build configuration list for PBXNativeTarget "DBGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D3DED9F29819EC400E57AE7 /* Debug */,
+				0D3DEDA029819EC400E57AE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D3DEDAB29819ECF00E57AE7 /* Build configuration list for PBXNativeTarget "OLCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D3DEDAC29819ECF00E57AE7 /* Debug */,
+				0D3DEDAD29819ECF00E57AE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0D46A87D27D9060200F99C07 /* Build configuration list for PBXProject "physalia OLC DBG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -14,116 +14,84 @@ Giulio Formenti (giulio.formenti@gmail.com)
 
 using namespace std;
 
+
+
 int main()
 {
     //declare the problem
-    string genome = "ATGCTGATCACAATATAGAT", Lkmer, Rkmer;
-    int read_len = 7, k = 4, nodeUid = 0, n1 = 0, n2 = 0;
+    string genome = "ATGCTGATCT", Lkmer, Rkmer;
+    int read_len = 7, k = 5;
     vector<string> reads;
-    unordered_map<string, int> nodesFW;
-    unordered_map<int, string> nodesBW;
-    vector<string> kmers;
-    unordered_map<string, int> kmers_counts;
-    vector<vector<int>> overlaps;
+    unordered_map<string, bool[4]> DBG;
+    
+    unordered_map<char,int> code = {
+                            {'A',0},
+                            {'C',1},
+                            {'G',2},
+                            {'T',3}
+    };
+    
+    unordered_map<int,char> rev = {
+                            {0,'A'},
+                            {1,'C'},
+                            {2,'G'},
+                            {3,'T'}
+    };
     
     //check variables
-    cout<<"The original genome is: "<<genome<<endl;
-    cout<<"Genome size: "<<genome.size()<<endl;
+    cout << "The original genome is: " << genome << endl;
+    cout << "Genome size: " << genome.size() << endl;
+    cout << "Read length is: " << read_len << endl;
+    cout << "Read number is: " << genome.size()-read_len+1 << endl;
+    cout << "kmer length is: " << k << endl;
 
     //generate reads
     for (int i = 0; i <= genome.size()-read_len; i++)
         reads.push_back(genome.substr(i,read_len));
     
-    //check reads
-    for(const auto& read : reads)
-      std::cout << read << std::endl;
+    //print reads
+    for (int i = 0; i < reads.size(); i++)
+        cout << reads[i] << " ("<< i << ")" << endl;
     
     //generate k-1 nodes from reads
-    for(const auto& read : reads) {
+    for(string read : reads) {
         
-        for (int i = 0; i<=read_len-k; i++) {
+        for (int i = 0; i<=read_len-k; ++i) {
             
-            cout<<"kmer: "<<read.substr(i, k)<<endl;
-            kmers_counts[read.substr(i, k)]++;
-            kmers.push_back(read.substr(i, k));
+            string kmer = read.substr(i, k);
+            
+            cout<<"kmer: "<<kmer<<endl;
             
             Lkmer = read.substr(i, k-1);
-            
-            std::unordered_map<string,int>::const_iterator it = nodesFW.find(Lkmer);
-
-            if (it != nodesFW.end()) {
-                n1 = it->second;
-            }else{
-                nodesFW[Lkmer] = nodeUid;
-                nodesBW[nodeUid] = Lkmer;
-                n1 = nodeUid;
-                nodeUid++;
-                
-                overlaps.resize(nodeUid+1);
-            }
-            
-            cout<<"L k-1 mer: "<<Lkmer<<" (nodeUid: "<<n1<<")"<<endl;
+            cout<<"L k-1 mer: "<<Lkmer<<endl;
             
             Rkmer = read.substr(i+1, k-1);
+            cout<<"R k-1 mer: "<<Rkmer<<endl;
             
-            it = nodesFW.find(Rkmer);
+            DBG[Lkmer][code[kmer.back()]] = true;
 
-            if (it != nodesFW.end()) {
-                n2 = it->second;
-            }else{
-                nodesFW[Rkmer] = nodeUid;
-                nodesBW[nodeUid] = Rkmer;
-                n2 = nodeUid;
-                nodeUid++;
-                
-                overlaps.resize(nodeUid+1);
-                
-            }
-            
-            overlaps.at(n1).resize(nodeUid+1);
-            
-            cout<<"R k-1 mer: "<<Rkmer<<" (nodeUid: "<<n2<<")"<<endl;
-            
-            overlaps.at(n1).at(n2)++;
-        
         }
         
     }
     
-    //enumerate k-1 strings
-    cout << "enumerate k-1 strings" << endl;
-    for(const auto& node : nodesFW) {
+    string path = genome.substr(0, k-1);
+    
+    Lkmer = path;
+    
+    //walk the graph
+    for (int i = 0; i <= genome.size()-read_len; ++i) {
         
-        cout << "{" << node.first << ": " << node.second << "}\n";
-    
-    }
-    
-    //enumerate kmers
-    cout << "enumerate kmers" << endl;
-    for(const auto& kmer : kmers_counts) {
-        
-        cout << "{" << kmer.first << ": " << kmer.second << "}\n";
-    
-    }
-    
-    string path = nodesBW[0];
-    
-    //enumerate overlaps
-    cout << "enumerate overlaps" << endl;
-    for(int i = 0; i<overlaps.size(); i++) {
-        
-        for(int e = 0; e<overlaps[i].size(); e++) {
-    
-            cout << nodesBW[i] << "->" << nodesBW[e] << " (" << overlaps[i].at(e) <<")" << endl;
+        for (int j = 0; j < 4; ++j) {
             
-            if (overlaps[i].at(e) > 0) {
-            
-                //Euleran path
-                path += nodesBW[e].back();
+            if(DBG[Lkmer][j] == true) {
+                
+                path.push_back(rev[j]);
+                Lkmer = path.substr(path.length() - k+1);
                 
             }
             
         }
+        
     }
     
     cout<<"The original genome is:\t\t\t"<<genome<<endl;

@@ -39,24 +39,25 @@ void DFS(string& path, int v1, vector<string> reads, vector<vector<int>> overlap
 int main()
 {
     //declare the problem
-    string genome = "ATGCTGATCA";
+    string genome = "ATGCTGATCT";
     int read_len = 5, overlap_len = 1;
     vector<string> reads;
     vector<vector<int>> overlaps;
     
     //check variables
-    cout<<"The original genome is: "<<genome<<endl;
-    cout<<"Genome size: "<<genome.size()<<endl;
-    cout<<"Read length is: "<<read_len<<endl;
-    cout<<"Expected read overlap is: "<<overlap_len<<endl;
+    cout << "The original genome is: " << genome << endl;
+    cout << "Genome size: " << genome.size() << endl;
+    cout << "Read length is: " << read_len << endl;
+    cout << "Read number is: " << genome.size()-read_len+1 << endl;
+    cout << "Expected read overlap is: " << overlap_len << endl;
 
     //generate reads
     for (int i = 0; i <= genome.size()-read_len; i++)
         reads.push_back(genome.substr(i,read_len));
     
     //print reads
-    for(const auto& read : reads)
-      std::cout << read << std::endl;
+    for (int i = 0; i < reads.size(); i++)
+        cout << reads[i] << " ("<< i << ")" << endl;
     
     auto isOverlap = [read_len, reads, overlap_len](int a, int b) {
         
@@ -74,7 +75,7 @@ int main()
             
             if(isOverlap(i, e)) {
         
-                std::cout << "read " << reads[i] << " (" << i << ") overlaps with read " << reads[e] << " (" << e << ")" << std::endl;
+                cout << "read " << reads[i] << " (" << i << ") overlaps with read " << reads[e] << " (" << e << ")" << endl;
                 
                 //build graph
                 overlaps.at(i).push_back(e);
@@ -96,7 +97,7 @@ int main()
     DFS(path, start_node, reads, overlaps, visited);
     
     //output consensus
-    cout<<"The original genome is:\t\t\t"<<genome<<endl;
+    cout<<"The original genome was:\t\t"<<genome<<endl;
     cout<<"The reconstructed genome is:\t"<<path<<endl;
 
     return 0;
